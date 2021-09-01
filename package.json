@@ -8,12 +8,16 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo-google-fonts/roboto": "^0.2.0",
     "expo": "~42.0.1",
+    "expo-app-loading": "^1.1.2",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-svg": "12.1.1",
     "react-native-web": "~0.13.12",
+    "roboto": "^0.8.2",
     "styled-components": "^5.3.1"
   },
   "private": true,
@@ -24,6 +28,7 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.25.1",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "react-native-svg-transformer": "^0.14.3"
   }
 }
