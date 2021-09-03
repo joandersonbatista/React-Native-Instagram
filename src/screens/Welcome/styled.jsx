@@ -1,8 +1,7 @@
 import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 
 export const { height, width } = Dimensions.get('window');
-const sera;
 
 export const BacgroundImage = styled.View`
   height: 57%;
@@ -28,15 +27,22 @@ export const ContainerLogin = styled.View`
   align-items: center;
 `;
 
-export const LoginFaceButton = styled.TouchableOpacity`
-  width: 81%;
-  height: ${height * 0.08}px;
-  background-color: #3B5999;
-  margin-top: ${height * 0.06}px;
-  border-radius: 14px;
-  align-items: center;
-  justify-content: center;
-`;
+export const { LoginFaceButton } = StyleSheet.create({
+  LoginFaceButton: {
+    width: '81%',
+    height: height * 0.08,
+    backgroundColor: '#3B5999',
+    marginTop: height * 0.06,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.46,
+    shadowRadius: 11.14,
+    elevation: 17,
+  },
+});
 
 export const ButtonContent = styled.View`
   flex-direction: row;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, TouchableOpacity } from 'react-native';
 import AppLoading from 'expo-app-loading';
 // eslint-disable-next-line camelcase
 import { useFonts, Roboto_500Medium } from '@expo-google-fonts/roboto';
@@ -56,7 +56,7 @@ export default function Login() {
         </Svg>
       </WelcomeImage>
       <ContainerLogin>
-        <LoginFaceButton>
+        <TouchableOpacity style={LoginFaceButton}>
           <ButtonContent>
             <LogoFace height={height * 0.036} />
             <LoginFacebookText
@@ -65,7 +65,7 @@ export default function Login() {
               Entre com Facebook
             </LoginFacebookText>
           </ButtonContent>
-        </LoginFaceButton>
+        </TouchableOpacity>
         <LoginEmailButton>
           {/* eslint-disable-next-line camelcase */}
           <LoginEmailText
