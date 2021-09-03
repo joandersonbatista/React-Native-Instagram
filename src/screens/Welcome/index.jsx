@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StatusBar, TouchableOpacity } from 'react-native';
 import AppLoading from 'expo-app-loading';
 // eslint-disable-next-line camelcase
@@ -24,8 +24,12 @@ import {
 import WelcomeLogo from '../../assets/welcome.jpeg';
 import Logo from '../../assets/Logo.svg';
 import LogoFace from '../../assets/Vector.svg';
+import modalContext from '../../context/modalContex';
+import ModalSignIn from '../SignIn';
 
 export default function Login() {
+  const { state, dispatch } = useContext(modalContext);
+
   const [fontsLoaded] = useFonts({
     Roboto_500Medium,
   });
@@ -36,7 +40,7 @@ export default function Login() {
 
   return (
     <>
-      <StatusBar hidden />
+      <StatusBar hidden={!state.open} />
       <WelcomeImage source={WelcomeLogo} resizeMode="cover">
         <Svg height="100%" width="100%">
           <Defs>
@@ -56,7 +60,7 @@ export default function Login() {
         </Svg>
       </WelcomeImage>
       <ContainerLogin>
-        <TouchableOpacity style={LoginFaceButton}>
+        <TouchableOpacity style={LoginFaceButton} onPress={() => dispatch({ type: 'true' })}>
           <ButtonContent>
             <LogoFace height={height * 0.036} />
             <LoginFacebookText
@@ -86,6 +90,7 @@ export default function Login() {
           <Logo height={height * 0.05} />
         </LogoContainer>
       </ContainerLogin>
+      {state.open ? <ModalSignIn /> : <></>}
     </>
   );
 }
