@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 
 export const { height, width } = Dimensions.get('window');
+const sera;
 
 export const BacgroundImage = styled.View`
   height: 57%;
