@@ -40,8 +40,8 @@ export default function Login() {
 
   return (
     <>
-      <StatusBar hidden={!state.open} />
-      <WelcomeImage source={WelcomeLogo} resizeMode="cover">
+      <StatusBar animated showHideTransition="slide" translucent backgroundColor="transparent" hidden={!state.open} />
+      <WelcomeImage blurRadius={!state.open ? 0 : 4} source={WelcomeLogo} resizeMode="cover">
         <Svg height="100%" width="100%">
           <Defs>
             <RadialGradient
@@ -52,15 +52,15 @@ export default function Login() {
               ry="230"
               gradientUnits="userSpaceOnUse"
             >
-              <Stop offset="0" stopColor="#2626284D" stopOpacity="0.3" />
-              <Stop offset="1" stopColor="#262628CC" stopOpacity="0.8" />
+              <Stop offset="0" stopColor="#2626284D" stopOpacity={!state.open ? '0.3' : '0'} />
+              <Stop offset="1" stopColor="#262628CC" stopOpacity={!state.open ? '0.8' : '0'} />
             </RadialGradient>
           </Defs>
-          <Ellipse cx="150" cy="75" rx={height * 0.57} ry="100%" fill="url(#grad)" />
+          <Ellipse cx="150" cy="150" rx={height * 0.57} ry="100%" fill="url(#grad)" />
         </Svg>
       </WelcomeImage>
       <ContainerLogin>
-        <TouchableOpacity style={LoginFaceButton} onPress={() => dispatch({ type: 'true' })}>
+        <TouchableOpacity style={LoginFaceButton}>
           <ButtonContent>
             <LogoFace height={height * 0.036} />
             <LoginFacebookText
@@ -78,7 +78,7 @@ export default function Login() {
             Entre com seu e-mail
           </LoginEmailText>
         </LoginEmailButton>
-        <SignUpContainer>
+        <SignUpContainer onPress={() => dispatch({ type: 'true' })}>
           <SignUpText
             fontFamily="Roboto_500Medium"
           >
