@@ -1,7 +1,8 @@
 import styled from 'styled-components/native';
-import { Dimensions } from 'react-native';
-
-const { height } = Dimensions.get('window');
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from 'react-native-responsive-screen';
 
 export const Background = styled.View`
   flex: 1;
@@ -11,20 +12,20 @@ export const Background = styled.View`
 export const Container = styled.View`
   position: absolute;
   background-color: white;
-  height: 92%;
-  width: 100%;
+  height: ${hp(92)}px;
+  width: ${wp(100)}px;
   bottom: 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 `;
 
 export const Shape = styled.View`
-  height: 1.9%;
-  width: 85%;
+  height: ${hp(1.9)}px;
+  width: ${wp(85)}px;
   background-color: #FFFFFF;
   opacity: 0.35;
   position: absolute;
-  top: 7%;
+  top: ${hp(7)}px;
   align-self: center;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
@@ -32,41 +33,41 @@ export const Shape = styled.View`
 
 export const BackButton = styled.TouchableOpacity`
   margin: 20px 0px 0px 15px;
-  width: 10%;
+  height: 4%;
 `;
 
 export const SignInTextInstagram = styled.Text`
-  font-family: ${(props) => props.fontFamily};
+  font-family: Roboto_900Black;
   font-weight: 900;
-  font-size: 36px;
-  line-height: 42px;
+  font-size: ${hp(4.43)}px;
+  line-height: ${hp(5.1)}px;
   display: flex;
   align-items: center;
   text-align: center;
   color: #262628;
-  margin-top: 17%;
+  margin-top: ${hp(9.9)}px;
 `;
 
 export const EnterYourDetailsText = styled.Text`
-  font-family: ${(props) => props.fontFamily};
+  font-family: Roboto_500Medium;
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
   color: #9797BD;
   text-align: center;
-  margin-top: 13px;
+  margin-top: ${hp(1.6)}px;
 `;
 
 export const ContainerEmail = styled.View`
   width: 81%;
   align-self: center;
-  margin-top: ${(props) => props.margin}%;
+  margin-top: ${((props) => hp(props.margin))}px;
 `;
 
 export const UsernameOrEmailText = styled.Text`
-  font-family: ${(props) => props.fontFamily};
+  font-family: Roboto_500Medium;
   font-weight: 500;
-  font-size: 13px;
+  font-size: ${hp(1.6)}px;
   line-height: 15px;
   color: #262628;
 `;
@@ -74,28 +75,27 @@ export const UsernameOrEmailText = styled.Text`
 export const ContainerInput = styled.View`
   flex-direction: row;
   width: 100%;
-  height: ${height * 0.08}px;
+  height: ${hp(7.3)}px;
   border: 1px solid rgba(38, 38, 40, 0.20);
-  border-radius: 14px;
-  margin-top: ${height * 0.012}px;
+  border-radius: ${hp(1.7)}px;
+  margin-top: ${hp(1.2)}px;
   padding: 0px 20px;
   align-items: center;
 `;
 
 export const TextInputEmail = styled.TextInput`
   padding-left: 10px;
-  width: 80%;
-  font-size: 20px;
-  font-family: ${(props) => props.fontFamily};
+  width: ${wp(81)}px;
+  font-family: Roboto_400Regular;
   color: #262628;
-  font-size: 14px;
+  font-size: ${hp(1.7)}px;
   line-height: 16px;
 `;
 
 export const ForgotPasswordText = styled.Text`
-  font-family: ${(props) => props.fontFamily};
+  font-family: Roboto_500Medium;
   font-weight: 500;
-  font-size: 13px;
+  font-size: ${hp(1.6)}px;
   line-height: 15px;
   color: #43A2FA;
   position: absolute;
@@ -103,25 +103,24 @@ export const ForgotPasswordText = styled.Text`
 `;
 
 export const LoginButton = styled.TouchableOpacity`
-  width: 81%;
-  height: ${height * 0.08}px;
+  width: ${wp(81)}px;
+  height: ${hp(7.3)}px;
   background-color: #262628;
-  border-radius: 14px;
-  margin-top: 15px;
+  border-radius: ${hp(1.7)}px;
+  margin-top: ${hp(2.4)}px;
   align-items: center;
   justify-content: center;
   align-self: center;
 `;
 
 export const LoginEmailText = styled.Text`
-  font-size: 14px;
+  font-size: ${hp(1.9)}px;
   color: white;
-  font-family: ${(props) => props.fontFamily};
+  font-family: Roboto_500Medium;
   line-height: 16px;
 `;
 
 export const LogoContainer = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
+  align-self: center;
+  margin-top: ${hp(7.5)}px;
 `;

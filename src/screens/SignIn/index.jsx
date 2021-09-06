@@ -1,9 +1,4 @@
 import React, { useContext } from 'react';
-import AppLoading from 'expo-app-loading';
-import {
-  // eslint-disable-next-line camelcase
-  useFonts, Roboto_900Black, Roboto_500Medium, Roboto_400Regular,
-} from '@expo-google-fonts/roboto';
 import modalContext from '../../context/modalContex';
 
 import {
@@ -33,16 +28,6 @@ const email = 'joandersonbatista.br@icloud.com';
 export default function ModalSignIn() {
   const { dispatch } = useContext(modalContext);
 
-  const [fontsLoaded] = useFonts({
-    Roboto_900Black,
-    Roboto_500Medium,
-    Roboto_400Regular,
-  });
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
-
   return (
     <Background>
       <Shape />
@@ -50,47 +35,43 @@ export default function ModalSignIn() {
         <BackButton onPress={() => dispatch({ type: 'true' })}>
           <BackSvg />
         </BackButton>
-        <SignInTextInstagram fontFamily="Roboto_900Black">
+        <SignInTextInstagram>
           Entre no
           {'\n'}
           Instagram
         </SignInTextInstagram>
-        <EnterYourDetailsText fontFamily="Roboto_500Medium">
+        <EnterYourDetailsText>
           Insira seus dados abaixo
         </EnterYourDetailsText>
-        <ContainerEmail margin={9}>
-          <UsernameOrEmailText fontFamily="Roboto_500Medium">
+        <ContainerEmail margin={4.8}>
+          <UsernameOrEmailText>
             Nome de usuário ou email
           </UsernameOrEmailText>
           <ContainerInput>
             <EmailSvg />
             <TextInputEmail
-              fontFamily="Roboto_400Regular"
               value={email}
               placeholderTextColor="#9797BD"
             />
           </ContainerInput>
         </ContainerEmail>
-        <ContainerEmail margin={2.8}>
-          <UsernameOrEmailText fontFamily="Roboto_500Medium">
+        <ContainerEmail margin={2.5}>
+          <UsernameOrEmailText>
             Senha
           </UsernameOrEmailText>
-          <ForgotPasswordText fontFamily="Roboto_500Medium">
+          <ForgotPasswordText>
             Esqueceu a senha?
           </ForgotPasswordText>
           <ContainerInput>
             <Password />
             <TextInputEmail
-              fontFamily="Roboto_400Regular"
               placeholder="Senha"
               placeholderTextColor="#9797BD"
             />
           </ContainerInput>
         </ContainerEmail>
         <LoginButton>
-          <LoginEmailText
-            fontFamily="Roboto_500Medium"
-          >
+          <LoginEmailText>
             Entrar
           </LoginEmailText>
         </LoginButton>
