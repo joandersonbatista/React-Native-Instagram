@@ -16,6 +16,7 @@ import {
   LoginButton,
   LoginEmailText,
   LogoContainer,
+  ContainerPassword,
 } from './styled';
 
 import BackSvg from '../../assets/Back.svg';
@@ -43,7 +44,7 @@ export default function ModalSignIn() {
         <EnterYourDetailsText>
           Insira seus dados abaixo
         </EnterYourDetailsText>
-        <ContainerEmail margin={4.8}>
+        <ContainerEmail>
           <UsernameOrEmailText>
             Nome de usuário ou email
           </UsernameOrEmailText>
@@ -55,7 +56,7 @@ export default function ModalSignIn() {
             />
           </ContainerInput>
         </ContainerEmail>
-        <ContainerEmail margin={2.5}>
+        <ContainerPassword>
           <UsernameOrEmailText>
             Senha
           </UsernameOrEmailText>
@@ -69,7 +70,7 @@ export default function ModalSignIn() {
               placeholderTextColor="#9797BD"
             />
           </ContainerInput>
-        </ContainerEmail>
+        </ContainerPassword>
         <LoginButton>
           <LoginEmailText>
             Entrar

@@ -1,37 +1,34 @@
 import styled from 'styled-components/native';
 import { Dimensions, StyleSheet } from 'react-native';
 
-import {
-  heightPercentageToDP as hp,
-  widthPercentageToDP as wp,
-} from 'react-native-responsive-screen';
+import { hp, wp } from '../../../responsive';
 
 export const { height } = Dimensions.get('window');
 
 export const WelcomeImage = styled.ImageBackground`
-  height: ${hp(57)}px;
-  width: ${wp(100)}px;
+  height: ${hp(465)}px;
+  width: 100%;
   position: absolute;
 `;
 
 export const ContainerLogin = styled.View`
-  height: ${hp(46)}px;
-  width: ${wp(100)}px;
+  height: ${hp(380)}px;
+  width: 100%;
   position: absolute;
   background-color: white;
-  bottom: 0;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  border-top-left-radius: ${hp(20)}px;
+  border-top-right-radius: ${hp(20)}px;
   align-items: center;
+  bottom: 0px;
 `;
 
 export const { LoginFaceButton } = StyleSheet.create({
   LoginFaceButton: {
-    width: wp(81),
-    height: hp(7.3),
+    width: wp(305),
+    height: hp(60),
     backgroundColor: '#3B5999',
-    marginTop: hp(6.1),
-    borderRadius: 14,
+    marginTop: hp(50),
+    borderRadius: hp(14),
     alignItems: 'center',
     justifyContent: 'center',
     shadowColor: '#000',
@@ -48,39 +45,39 @@ export const ButtonContent = styled.View`
 `;
 
 export const LoginFacebookText = styled.Text`
-  font-size: ${hp(1.7)}px;
+  font-size: ${hp(14)}px;
   color: white;
   font-family: ${(props) => props.fontFamily};
-  line-height: 16px;
-  padding-left: 20px;
+  line-height: ${hp(16)}px;
+  padding-left: ${wp(10)}px;
 `;
 
 export const LoginEmailButton = styled.TouchableOpacity`
-  width: ${wp(81)}px;
-  height: ${hp(7.3)}px;
+  width: ${wp(305)}px;
+  height: ${hp(60)}px;
   background-color: #262628;
-  border-radius: 14px;
-  margin-top: ${hp(2.4)}px;
+  border-radius: ${hp(14)}px;
+  margin-top: ${hp(20)}px;
   align-items: center;
   justify-content: center;
 `;
 
 export const LoginEmailText = styled.Text`
-  font-size: ${hp(1.7)}px;
+  font-size: ${hp(14)}px;
   color: white;
   font-family: ${(props) => props.fontFamily};
-  line-height: 16px;
+  line-height: ${hp(16)}px;
 `;
 
 export const SignUpContainer = styled.TouchableOpacity`
-  margin-top: ${hp(7.5)}px;
+  margin-top: ${hp(61)}px;
 `;
 
 export const SignUpText = styled.Text`
-  font-size: ${hp(1.7)}px;
+  font-size: ${hp(14)}px;
   color: black;
   font-family: ${(props) => props.fontFamily};
-  line-height: 16px;
+  line-height: ${hp(16)}px;
 `;
 
 export const SignUpTextSpan = styled.Text`
@@ -88,5 +85,5 @@ export const SignUpTextSpan = styled.Text`
 `;
 
 export const LogoContainer = styled.View`
-  margin-top: ${hp(3.4)}px;
+  margin-top: ${hp(40)}px;
 `;

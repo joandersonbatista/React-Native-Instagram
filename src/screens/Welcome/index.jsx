@@ -87,7 +87,7 @@ export default function Login() {
           </SignUpText>
         </SignUpContainer>
         <LogoContainer>
-          <Logo height={height * 0.05} />
+          <Logo />
         </LogoContainer>
       </ContainerLogin>
       {state.open ? <ModalSignIn /> : <></>}
