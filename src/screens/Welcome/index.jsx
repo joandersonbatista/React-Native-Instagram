@@ -40,8 +40,14 @@ export default function Login() {
 
   return (
     <>
-      <StatusBar animated showHideTransition="slide" translucent backgroundColor="transparent" hidden={!state.open} />
-      <WelcomeImage blurRadius={!state.open ? 0 : 4} source={WelcomeLogo} resizeMode="cover">
+      <StatusBar
+        animated
+        showHideTransition="slide"
+        translucent
+        backgroundColor="transparent"
+        hidden={!state.open}
+      />
+      <WelcomeImage source={WelcomeLogo} resizeMode="cover">
         <Svg height="100%" width="100%">
           <Defs>
             <RadialGradient
@@ -52,8 +58,8 @@ export default function Login() {
               ry="230"
               gradientUnits="userSpaceOnUse"
             >
-              <Stop offset="0" stopColor="#2626284D" stopOpacity={!state.open ? '0.3' : '0'} />
-              <Stop offset="1" stopColor="#262628CC" stopOpacity={!state.open ? '0.8' : '0'} />
+              <Stop offset="0" stopColor="#2626284D" stopOpacity="0.3" />
+              <Stop offset="1" stopColor="#262628CC" stopOpacity="0.8" />
             </RadialGradient>
           </Defs>
           <Ellipse cx="150" cy="150" rx={height * 0.57} ry="100%" fill="url(#grad)" />

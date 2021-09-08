@@ -10,7 +10,9 @@ export function ModalProvider({ children }) {
   function reducer(state, action) {
     switch (action.type) {
       case 'true':
-        return { ...state, open: !state.open };
+        return { ...state, open: true };
+      case 'false':
+        return { ...state, open: false };
       default:
         throw new Error();
     }

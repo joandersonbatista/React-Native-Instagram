@@ -6,13 +6,13 @@ import {
 const heightScreen = 812;
 const widthScreen = 375;
 
-export function hp(height) {
+export function Hp(height) {
   const PxInPercent = (height * 100) / heightScreen;
 
   return heightPercentageToDP(PxInPercent);
 }
 
-export function wp(width) {
+export function Wp(width) {
   const PxInPercent = (width * 100) / widthScreen;
 
   return widthPercentageToDP(PxInPercent);
