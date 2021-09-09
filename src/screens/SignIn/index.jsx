@@ -49,7 +49,7 @@ export default function ModalSignIn() {
   const shapePosition = [Hp(55), Hp(75)];
 
   function runDispatch() {
-    dispatch({ type: 'false' });
+    dispatch({ type: 'open?' });
   }
 
   function closeModal() {
@@ -70,7 +70,7 @@ export default function ModalSignIn() {
       easing: Easing.bezier(0, 0.10, 0, 0.99),
     }, () => {
       positionTest.value = withTiming(shapePosition[0], {
-        duration: 550,
+        duration: 230,
         easing: Easing.bezier(0, 0.10, 0, 0.99),
       });
     });

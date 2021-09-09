@@ -1,8 +1,5 @@
 import React, { useContext } from 'react';
 import { StatusBar, TouchableOpacity } from 'react-native';
-import AppLoading from 'expo-app-loading';
-// eslint-disable-next-line camelcase
-import { useFonts, Roboto_500Medium } from '@expo-google-fonts/roboto';
 import {
   Svg, Defs, RadialGradient, Stop, Ellipse,
 } from 'react-native-svg';
@@ -21,7 +18,7 @@ import {
   height,
 } from './styled';
 
-import WelcomeLogo from '../../assets/welcome.jpeg';
+import WelcomeJpeg from '../../assets/welcome.jpeg';
 import Logo from '../../assets/Logo.svg';
 import LogoFace from '../../assets/Vector.svg';
 import modalContext from '../../context/modalContex';
@@ -29,14 +26,6 @@ import ModalSignIn from '../SignIn';
 
 export default function Login() {
   const { state, dispatch } = useContext(modalContext);
-
-  const [fontsLoaded] = useFonts({
-    Roboto_500Medium,
-  });
-
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
 
   return (
     <>
@@ -47,7 +36,7 @@ export default function Login() {
         backgroundColor="transparent"
         hidden={!state.open}
       />
-      <WelcomeImage source={WelcomeLogo} resizeMode="cover">
+      <WelcomeImage source={WelcomeJpeg} resizeMode="cover">
         <Svg height="100%" width="100%">
           <Defs>
             <RadialGradient
@@ -69,25 +58,18 @@ export default function Login() {
         <TouchableOpacity style={LoginFaceButton}>
           <ButtonContent>
             <LogoFace height={height * 0.036} />
-            <LoginFacebookText
-              fontFamily="Roboto_500Medium"
-            >
+            <LoginFacebookText>
               Entre com Facebook
             </LoginFacebookText>
           </ButtonContent>
         </TouchableOpacity>
         <LoginEmailButton>
-          {/* eslint-disable-next-line camelcase */}
-          <LoginEmailText
-            fontFamily="Roboto_500Medium"
-          >
+          <LoginEmailText>
             Entre com seu e-mail
           </LoginEmailText>
         </LoginEmailButton>
-        <SignUpContainer onPress={() => dispatch({ type: 'true' })}>
-          <SignUpText
-            fontFamily="Roboto_500Medium"
-          >
+        <SignUpContainer onPress={() => dispatch({ type: 'open?' })}>
+          <SignUpText>
             Não é menbro?
             <SignUpTextSpan> Inscreva-se</SignUpTextSpan>
           </SignUpText>
