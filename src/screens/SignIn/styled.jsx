@@ -23,13 +23,12 @@ export const Container = styled(Animated.View)`
   border-top-right-radius: ${Hp(20)}px;
 `;
 
-export const Shape = styled.View`
+export const Shape = styled(Animated.View)`
   height: ${Hp(10)}px;
   width: ${Wp(320)}px;
   background-color: #FFFFFF;
-  opacity: 0.35;
   position: absolute;
-  top: ${Hp(55)}px;
+  opacity: 0.35;
   align-self: center;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;

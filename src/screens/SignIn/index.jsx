@@ -6,9 +6,11 @@ import {
   Easing,
   interpolate,
   runOnJS,
+  Extrapolate,
 } from 'react-native-reanimated';
 
 import { Dimensions } from 'react-native';
+import { Hp } from '../../../responsive';
 
 import modalContext from '../../context/modalContex';
 
@@ -43,19 +45,34 @@ export default function ModalSignIn() {
   const { dispatch } = useContext(modalContext);
 
   const positionModal = useSharedValue(-height);
+  const positionTest = useSharedValue(Hp(75));
+  const shapePosition = [Hp(55), Hp(75)];
+
+  function runDispatch() {
+    dispatch({ type: 'false' });
+  }
 
   function closeModal() {
+    positionTest.value = withTiming(shapePosition[1], {
+      duration: 550,
+      easing: Easing.bezier(0, 0.10, 0, 0.99),
+    });
     positionModal.value = withTiming(-height, {
       duration: 400,
     }, () => {
-      runOnJS(() => dispatch({ type: 'false' }))();
+      runOnJS(runDispatch)();
     });
   }
 
   React.useEffect(() => {
-    positionModal.value = withTiming(0, {
+    positionModal.value = withTiming(Hp(0), {
       duration: 400,
       easing: Easing.bezier(0, 0.10, 0, 0.99),
+    }, () => {
+      positionTest.value = withTiming(shapePosition[0], {
+        duration: 550,
+        easing: Easing.bezier(0, 0.10, 0, 0.99),
+      });
     });
   }, []);
 
@@ -71,10 +88,20 @@ export default function ModalSignIn() {
     ),
   }));
 
+  const animatedShape = useAnimatedStyle(() => ({
+    top: positionTest.value,
+    opacity: interpolate(
+      positionModal.value,
+      [-20, 0],
+      [0, 0.35],
+      Extrapolate.CLAMP,
+    ),
+  }));
+
   return (
     <Background>
       <OpacityBackground style={animatedOpacity} />
-      <Shape />
+      <Shape style={animatedShape} />
       <Container style={animatedModal}>
         <BackButton onPress={() => closeModal()}>
           <BackSvg />

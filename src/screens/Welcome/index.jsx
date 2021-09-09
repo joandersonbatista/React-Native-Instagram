@@ -88,8 +88,8 @@ export default function Login() {
           <SignUpText
             fontFamily="Roboto_500Medium"
           >
-            Not a menber?
-            <SignUpTextSpan> Signup now</SignUpTextSpan>
+            Não é menbro?
+            <SignUpTextSpan> Inscreva-se</SignUpTextSpan>
           </SignUpText>
         </SignUpContainer>
         <LogoContainer>
