@@ -70,7 +70,7 @@ export default function Login() {
         </LoginEmailButton>
         <SignUpContainer onPress={() => dispatch({ type: 'open?' })}>
           <SignUpText>
-            Não é menbro?
+            Não é membro?
             <SignUpTextSpan> Inscreva-se</SignUpTextSpan>
           </SignUpText>
         </SignUpContainer>

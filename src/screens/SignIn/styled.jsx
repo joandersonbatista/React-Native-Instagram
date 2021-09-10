@@ -37,6 +37,7 @@ export const Shape = styled(Animated.View)`
 export const BackButton = styled.TouchableOpacity`
   margin: ${Hp(17)}px 0px 0px ${Wp(10)}px;
   height: ${Hp(36)}px;
+  width: ${Wp(36)}px;
 `;
 
 export const SignInTextInstagram = styled.Text`
@@ -101,14 +102,18 @@ export const TextInputEmail = styled.TextInput`
   line-height: ${Hp(16)}px;
 `;
 
+export const ContainerForgot = styled.TouchableOpacity`
+  position: absolute;
+  right: 0px;
+`;
+
 export const ForgotPasswordText = styled.Text`
   font-family: Roboto_500Medium;
   font-weight: 500;
   font-size: ${Hp(14)}px;
   line-height: ${Hp(15)}px;
   color: #43A2FA;
-  position: absolute;
-  right: 0px;
+  
 `;
 
 export const LoginButton = styled.TouchableOpacity`
