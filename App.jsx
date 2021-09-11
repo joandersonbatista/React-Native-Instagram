@@ -6,6 +6,7 @@ import {
 } from '@expo-google-fonts/roboto';
 
 import Welcome from './src/screens/Welcome';
+import Feed from './src/screens/Feed'
 
 import { ModalProvider } from './src/context/modalContex';
 
@@ -22,7 +23,7 @@ export default function App() {
 
   return (
     <ModalProvider>
-      <Welcome />
+      <Feed />
     </ModalProvider>
   );
 }
