@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { View } from 'react-native';
 import {
   Hp,
   Header,
@@ -8,7 +9,11 @@ import {
   LikeIcon,
   MessageIcon,
   SearchIcon,
+  NewbadgeIcon,
+  ContainerStory,
 } from './styled';
+
+import Storie from '../../components/storyAvatar';
 
 import Logo from '../../assets/Logo.svg';
 
@@ -23,10 +28,16 @@ export default function Feed() {
         </InstagramText>
         <ContainerIcons>
           <MessageIcon />
-          <LikeIcon />
+          <View>
+            <LikeIcon />
+            <NewbadgeIcon />
+          </View>
           <SearchIcon />
         </ContainerIcons>
       </Header>
+      <ContainerStory>
+        <Storie />
+      </ContainerStory>
     </>
   );
 }
