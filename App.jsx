@@ -7,7 +7,7 @@ import {
 
 import Welcome from './src/screens/Welcome';
 import Feed from './src/screens/Feed'
-
+//te
 import { ModalProvider } from './src/context/modalContex';
 
 export default function App() {
